@@ -1,0 +1,3 @@
+
+compile_scripts.bat -i F:\Lua-Babe\quick-quick-cocos2d-x-v3.3\quick\bin\LiveUdpata\src -o F:\Lua-Babe\quick-quick-cocos2d-x-v3.3\quick\bin\LiveUdpata\luncher.zip -e xxtea_zip -ek aaa -es Xt
+compile_scripts.bat -i F:\Lua-Babe\quick-quick-cocos2d-x-v3.3\quick\bin\LiveUdpata\app\ -o F:\Lua-Babe\quick-quick-cocos2d-x-v3.3\quick\bin\LiveUdpata\game.zip

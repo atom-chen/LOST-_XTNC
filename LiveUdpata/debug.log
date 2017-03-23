@@ -1,0 +1,246 @@
+Quick-Cocos2d-x C++ support ready.
+
+------------------------------------------------
+
+LOAD LUA FILE: F:/Lua-Babe/quick-quick-cocos2d-x-v3.3/quick/bin/LiveUdpata/src/main.lua
+
+------------------------------------------------
+
+[LUA-print] ===========================================================
+
+[LUA-print]               LOAD QUICK FRAMEWORK
+
+[LUA-print] ===========================================================
+
+[LUA-print] [INFO] 
+
+[LUA-print] [INFO] # DEBUG                        = 1
+
+[LUA-print] [INFO] #
+
+[LUA-print] [INFO] # device.platform              = windows
+
+[LUA-print] [INFO] # device.model                 = unknown
+
+[LUA-print] [INFO] # device.language              = cn
+
+[LUA-print] [INFO] # device.writablePath          = F:\Lua-Babe\quick-quick-cocos2d-x-v3.3\quick\bin\LiveUdpata\
+
+[LUA-print] [INFO] # device.directorySeparator    = \
+
+[LUA-print] [INFO] # device.pathSeparator         = ;
+
+[LUA-print] [INFO] #
+
+[LUA-print] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_HEIGHT
+
+[LUA-print] [INFO] # CONFIG_SCREEN_WIDTH          = 960.00
+
+[LUA-print] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+
+[LUA-print] [INFO] # display.widthInPixels        = 960.00
+
+[LUA-print] [INFO] # display.heightInPixels       = 640.00
+
+[LUA-print] [INFO] # display.contentScaleFactor   = 1.00
+
+[LUA-print] [INFO] # display.width                = 960.00
+
+[LUA-print] [INFO] # display.height               = 640.00
+
+[LUA-print] [INFO] # display.cx                   = 480.00
+
+[LUA-print] [INFO] # display.cy                   = 320.00
+
+[LUA-print] [INFO] # display.left                 = 0.00
+
+[LUA-print] [INFO] # display.right                = 960.00
+
+[LUA-print] [INFO] # display.top                  = 640.00
+
+[LUA-print] [INFO] # display.bottom               = 0.00
+
+[LUA-print] [INFO] # display.c_left               = -480.00
+
+[LUA-print] [INFO] # display.c_right              = 480.00
+
+[LUA-print] [INFO] # display.c_top                = 320.00
+
+[LUA-print] [INFO] # display.c_bottom             = -320.00
+
+[LUA-print] [INFO] #
+
+[LUA-print] 1.0.5
+
+[LUA-print] getPackageUrl	127.0.0.1:3000/hotupdate/
+
+[LUA-print] getManifestFileUrl	127.0.0.1:3000/hotupdate/res/project.manifest
+
+[LUA-print] getVersionFileUrl	127.0.0.1:3000/hotupdate/res/version.manifest
+
+[LUA-print] [INFO] 游戏更新(5):, assetId->@version, percent->0, percentByFile->0, message->
+
+[LUA-print] [INFO] 游戏更新(3):, assetId->, percent->0, percentByFile->0, message->
+
+[LUA-print] [INFO] 游戏更新(5):, assetId->@manifest, percent->0, percentByFile->0, message->
+
+[LUA-print] [INFO] 游戏更新(3):, assetId->, percent->0, percentByFile->0, message->
+
+[LUA-print] [INFO] 游戏更新(5):, assetId->, percent->0, percentByFile->0, message->Start to update 1 files from remote package.
+
+[LUA-print] [INFO] 游戏更新(5):, assetId->, percent->0, percentByFile->100, message->
+
+[LUA-print] [INFO] 游戏更新(6):, assetId->res/project.manifest, percent->0, percentByFile->100, message->
+
+[LUA-print] [INFO] 游戏更新(8):, assetId->, percent->0, percentByFile->100, message->
+
+lua_loadChunksFromZIP() - load zip file: F:/Lua-Babe/quick-quick-cocos2d-x-v3.3/quick/bin/LiveUdpata//res/game.zip
+
+lua_loadChunksFromZIP() - loaded chunks count: 35
+
+[LUA-print] [INFO] GameState.load() - file "F:\Lua-Babe\quick-quick-cocos2d-x-v3.3\quick\bin\LiveUdpata\data.txt" not found
+
+[LUA-print] error code:% d	-3
+
+[LUA-print] ==>PACK_AGE	{"type":"register","pass":"e10adc3949ba59abbe56e057f20f883e","uuid":"YK34431"}
+
+[LUA-print] <==sock	{"status":20,"type":"register","infor":"create YK34431 success"}
+
+[LUA-print] [INFO] GameState.save() - update file "F:\Lua-Babe\quick-quick-cocos2d-x-v3.3\quick\bin\LiveUdpata\data.txt"
+
+[LUA-print] ==>PACK_AGE	{"user":"YK34431","type":"login","pass":"e10adc3949ba59abbe56e057f20f883e","server":"Hall"}
+
+[LUA-print] <==sock	{"status":200,"type":"login","infor":"ok","subid":"19"}
+
+[LUA-print] 登录成功
+
+[LUA-print] 网关SocketTransmission
+
+[LUA-print] ==>PACK_AGE	{"subid":"19","type":"login","index":1,"user":"YK34431","server":"Hall"}
+
+[LUA-print] 网关连接成功
+
+[LUA-print] <==sock	{"ok":true,"type":"login","status":200,"infor":"ok","result":{"cmd":"reconnect"}}
+
+[LUA-print] 网关接收
+
+[LUA-print] Session = 	2
+
+[LUA-print] ==>PACK_AGE	{"command":"goToWhere","type":"lua","session":2,"data":{"cmd":"goToWhere"}}
+
+[LUA-print] <==sock	{"ok":true,"type":"lua","session":2,"result":{"cmd":"gotoHall"}}
+
+[LUA-print] 登录大厅
+
+[LUA-print] Session = 	3
+
+[LUA-print] ==>PACK_AGE	{"command":"selectUser","type":"lua","session":3,"data":{"cmd":"selectUser"}}
+
+[LUA-print] <==sock	{"ok":true,"type":"lua","session":3,"result":{"cmd":"createUser","photo":1,"name":"Heting","money":50000000}}
+
+[LUA-print] 登录大厅
+
+[LUA-print] 加载心跳
+
+[LUA-print] 游戏开始金币	50000000
+
+[LUA-print] Session = 	4
+
+[LUA-print] ==>PACK_AGE	{"command":"heartbeat","type":"lua","session":4,"data":{"cmd":"heartbeat"}}
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"type":"lua","session":4,"result":"MSG.heartbeat"}
+
+[LUA-print] 在大厅层
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"result":{"type":1}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] ==>PACK_AGE	{"type":1}
+
+[LUA-print] ==>PACK_AGE	{"command":"setNickname","type":"lua","session":5,"data":"YK34431"}
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"type":"lua","session":5,"result":{"cmd":"setNickname","data":{"ok":true}}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] chdii
+
+[LUA-print] Session = 	6
+
+[LUA-print] ==>PACK_AGE	{"command":"getTotalyRank","type":"lua","session":6,"data":{"cmd":"getTotalyRank"}}
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"result":{"type":1}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] ==>PACK_AGE	{"type":1}
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"type":"lua","session":6,"result":{"cmd":"getTotalyRank","data":[{"user_total":0,"user_total_name":"YK34431","rank":1000,"user_id":"YK34431"},{"user_name":"我不是源哥","user_total":601110400,"user_id":"lkroot","rank":1,"user_total_name":"我不是源哥"},{"user_name":"老K第一帅","user_total":266717600,"user_id":"303988027","rank":2,"user_total_name":"老K第一帅"},{"user_name":"masterYI","user_total":102015000,"user_id":"qinaddspace","rank":3,"user_total_name":"masterYI"},{"user_name":"卧草","user_total":87000000,"user_id":"developerss","rank":4,"user_total_name":"卧草"},{"user_name":"bvbvv","user_total":69570200,"user_id":"aaaaaa","rank":5,"user_total_name":"bvbvv"},{"user_name":"??","user_total":62006000,"user_id":"develope","rank":6,"user_total_name":"??"},{"user_name":"xnjdjdjjs","user_total":54012600,"user_id":"bbbbbb","rank":7,"user_total_name":"xnjdjdjjs"},{"user_name":"雪义良","user_total":54000000,"user_id":"ppppppp","rank":8,"user_total_name":"雪义良"},{"user_name":"王子的吻","user_total":53218200,"user_id":"pppppp","rank":9,"user_total_name":"王子的吻"},{"user_name":"明旭","user_total":47200000,"user_id":"LK_604","rank":10,"user_total_name":"明旭"},{"user_name":"琲瓃","user_total":45200000,"user_id":"LK_602","rank":11,"user_total_name":"琲瓃"},{"user_name":"妍歌","user_total":44200000,"user_id":"LK_605","rank":12,"user_total_name":"妍歌"},{"user_name":"矿士","user_total":40600000,"user_id":"LK_603","rank":13,"user_total_name":"矿士"},{"user_name":"季少","user_total":40400000,"user_id":"LK_600","rank":14,"user_total_name":"季少"},{"user_name":"asdfdxcsdf","user_total":40200000,"user_id":"LK_609","rank":15,"user_total_name":"asdfdxcsdf"},{"user_name":"心语","user_total":40200000,"user_id":"LK_608","rank":16,"user_total_name":"心语"},{"user_name":"海多","user_total":39400000,"user_id":"LK_601","rank":17,"user_total_name":"海多"},{"user_name":"晓シ赵云","user_total":36600000,"user_id":"LK_611","rank":18,"user_total_name":"晓シ赵云"},{"user_name":"℡﹏遊戲","user_total":34600000,"user_id":"LK_616","rank":19,"user_total_name":"℡﹏遊戲"},{"user_name":"宏恺","user_total":34600000,"user_id":"LK_626","rank":20,"user_total_name":"宏恺"},{"user_name":"雅志","user_total":34400000,"user_id":"LK_610","rank":21,"user_total_name":"雅志"},{"user_name":"哦哩哦","user_total":34400000,"user_id":"LK_628","rank":22,"user_total_name":"哦哩哦"},{"user_name":"蔓蔓","user_total":33800000,"user_id":"LK_639","rank":23,"user_total_name":"蔓蔓"},{"user_name":"意蕴","user_total":32800000,"user_id":"LK_606","rank":24,"user_total_name":"意蕴"},{"user_name":"你ゾ妈","user_total":32600000,"user_id":"LK_617","rank":25,"user_total_name":"你ゾ妈"},{"user_name":"宝贝7児","user_total":32200000,"user_id":"LK_614","rank":26,"user_total_name":"宝贝7児"},{"user_name":"文滨","user_total":32200000,"user_id":"LK_627","rank":27,"user_total_name":"文滨"},{"user_name":"恬谧","user_total":32000000,"user_id":"LK_607","rank":28,"user_total_name":"恬谧"},{"user_name":"静娴","user_total":31800000,"user_id":"LK_629","rank":29,"user_total_name":"静娴"},{"user_name":"浩涆","user_total":31600000,"user_id":"LK_647","rank":30,"user_total_name":"浩涆"},{"user_name":"暗黑情人","user_total":31400000,"user_id":"LK_620","rank":31,"user_total_name":"暗黑情人"},{"user_name":"兴业","user_total":31200000,"user_id":"LK_646","rank":32,"user_total_name":"兴业"},{"user_name":"茂实","user_total":30600000,"user_id":"LK_1034","rank":33,"user_total_name":"茂实"},{"user_name":"昊然","user_total":30600000,"user_id":"LK_1033","rank":34,"user_total_name":"昊然"},{"user_name":"devilboy123","user_total":30400000,"user_id":"LK_638","rank":35,"user_total_name":"devilboy123"},{"user_name":"天下情敌","user_total":30200000,"user_id":"LK_615","rank":36,"user_total_name":"天下情敌"},{"user_name":"Im886","user_total":30200000,"user_id":"LK_645","rank":37,"user_total_name":"Im886"},{"user_name":"风轻地欲","user_total":29400000,"user_id":"LK_644","rank":38,"user_total_name":"风轻地欲"},{"user_name":"名姝","user_total":28400000,"user_id":"LK_621","rank":39,"user_total_name":"名姝"},{"user_name":"雅韵","user_total":27800000,"user_id":"LK_1037","rank":40,"user_total_name":"雅韵"},{"user_name":"贝极塔2","user_total":27800000,"user_id":"LK_613","rank":41,"user_total_name":"贝极塔2"},{"user_name":"gdsfg852","user_total":27600000,"user_id":"LK_623","rank":42,"user_total_name":"gdsfg852"},{"user_name":"芳华","user_total":26800000,"user_id":"LK_612","rank":43,"user_total_name":"芳华"},{"user_name":"雅唱","user_total":26600000,"user_id":"LK_1038","rank":44,"user_total_name":"雅唱"},{"user_name":"峻熙","user_total":26400000,"user_id":"LK_618","rank":45,"user_total_name":"峻熙"},{"user_name":"平婉","user_total":26200000,"user_id":"LK_622","rank":46,"user_total_name":"平婉"},{"user_name":"智鑫","user_total":26000000,"user_id":"LK_1193","rank":47,"user_total_name":"智鑫"},{"user_name":"子萱","user_total":25200000,"user_id":"LK_625","rank":48,"user_total_name":"子萱"},{"user_name":"洁玉","user_total":24600000,"user_id":"LK_1030","rank":49,"user_total_name":"洁玉"},{"user_name":"天使阿蛮","user_total":24400000,"user_id":"LK_1192","rank":50,"user_total_name":"天使阿蛮"}]}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] Session = 	7
+
+[LUA-print] ==>PACK_AGE	{"command":"getDailyRank","type":"lua","session":7,"data":{"cmd":"getDailyRank"}}
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"type":"lua","session":7,"result":{"cmd":"getDailyRank","data":[{"user_dayly":0,"user_id":"YK34431","rank":1000,"user_dayly_name":"YK34431"},{"user_name":"雪义良","user_dayly":54000000,"user_dayly_name":"雪义良","user_id":"ppppppp","rank":1},{"user_name":"masterYI","user_dayly":16000000,"user_dayly_name":"masterYI","user_id":"qinaddspace","rank":2},{"user_name":"王子的吻","user_dayly":8000000,"user_dayly_name":"王子的吻","user_id":"pppppp","rank":3}]}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] Session = 	8
+
+[LUA-print] ==>PACK_AGE	{"command":"getTotalyRank","type":"lua","session":8,"data":{"cmd":"getTotalyRank"}}
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"type":"lua","session":8,"result":{"cmd":"getTotalyRank","data":[{"user_total":0,"user_total_name":"YK34431","rank":1000,"user_id":"YK34431"},{"user_name":"我不是源哥","user_total":601110400,"user_id":"lkroot","rank":1,"user_total_name":"我不是源哥"},{"user_name":"老K第一帅","user_total":266717600,"user_id":"303988027","rank":2,"user_total_name":"老K第一帅"},{"user_name":"masterYI","user_total":102015000,"user_id":"qinaddspace","rank":3,"user_total_name":"masterYI"},{"user_name":"卧草","user_total":87000000,"user_id":"developerss","rank":4,"user_total_name":"卧草"},{"user_name":"bvbvv","user_total":69570200,"user_id":"aaaaaa","rank":5,"user_total_name":"bvbvv"},{"user_name":"??","user_total":62006000,"user_id":"develope","rank":6,"user_total_name":"??"},{"user_name":"xnjdjdjjs","user_total":54012600,"user_id":"bbbbbb","rank":7,"user_total_name":"xnjdjdjjs"},{"user_name":"雪义良","user_total":54000000,"user_id":"ppppppp","rank":8,"user_total_name":"雪义良"},{"user_name":"王子的吻","user_total":53218200,"user_id":"pppppp","rank":9,"user_total_name":"王子的吻"},{"user_name":"明旭","user_total":47200000,"user_id":"LK_604","rank":10,"user_total_name":"明旭"},{"user_name":"琲瓃","user_total":45200000,"user_id":"LK_602","rank":11,"user_total_name":"琲瓃"},{"user_name":"妍歌","user_total":44200000,"user_id":"LK_605","rank":12,"user_total_name":"妍歌"},{"user_name":"矿士","user_total":40600000,"user_id":"LK_603","rank":13,"user_total_name":"矿士"},{"user_name":"季少","user_total":40400000,"user_id":"LK_600","rank":14,"user_total_name":"季少"},{"user_name":"asdfdxcsdf","user_total":40200000,"user_id":"LK_609","rank":15,"user_total_name":"asdfdxcsdf"},{"user_name":"心语","user_total":40200000,"user_id":"LK_608","rank":16,"user_total_name":"心语"},{"user_name":"海多","user_total":39400000,"user_id":"LK_601","rank":17,"user_total_name":"海多"},{"user_name":"晓シ赵云","user_total":36600000,"user_id":"LK_611","rank":18,"user_total_name":"晓シ赵云"},{"user_name":"℡﹏遊戲","user_total":34600000,"user_id":"LK_616","rank":19,"user_total_name":"℡﹏遊戲"},{"user_name":"宏恺","user_total":34600000,"user_id":"LK_626","rank":20,"user_total_name":"宏恺"},{"user_name":"雅志","user_total":34400000,"user_id":"LK_610","rank":21,"user_total_name":"雅志"},{"user_name":"哦哩哦","user_total":34400000,"user_id":"LK_628","rank":22,"user_total_name":"哦哩哦"},{"user_name":"蔓蔓","user_total":33800000,"user_id":"LK_639","rank":23,"user_total_name":"蔓蔓"},{"user_name":"意蕴","user_total":32800000,"user_id":"LK_606","rank":24,"user_total_name":"意蕴"},{"user_name":"你ゾ妈","user_total":32600000,"user_id":"LK_617","rank":25,"user_total_name":"你ゾ妈"},{"user_name":"宝贝7児","user_total":32200000,"user_id":"LK_614","rank":26,"user_total_name":"宝贝7児"},{"user_name":"文滨","user_total":32200000,"user_id":"LK_627","rank":27,"user_total_name":"文滨"},{"user_name":"恬谧","user_total":32000000,"user_id":"LK_607","rank":28,"user_total_name":"恬谧"},{"user_name":"静娴","user_total":31800000,"user_id":"LK_629","rank":29,"user_total_name":"静娴"},{"user_name":"浩涆","user_total":31600000,"user_id":"LK_647","rank":30,"user_total_name":"浩涆"},{"user_name":"暗黑情人","user_total":31400000,"user_id":"LK_620","rank":31,"user_total_name":"暗黑情人"},{"user_name":"兴业","user_total":31200000,"user_id":"LK_646","rank":32,"user_total_name":"兴业"},{"user_name":"茂实","user_total":30600000,"user_id":"LK_1034","rank":33,"user_total_name":"茂实"},{"user_name":"昊然","user_total":30600000,"user_id":"LK_1033","rank":34,"user_total_name":"昊然"},{"user_name":"devilboy123","user_total":30400000,"user_id":"LK_638","rank":35,"user_total_name":"devilboy123"},{"user_name":"天下情敌","user_total":30200000,"user_id":"LK_615","rank":36,"user_total_name":"天下情敌"},{"user_name":"Im886","user_total":30200000,"user_id":"LK_645","rank":37,"user_total_name":"Im886"},{"user_name":"风轻地欲","user_total":29400000,"user_id":"LK_644","rank":38,"user_total_name":"风轻地欲"},{"user_name":"名姝","user_total":28400000,"user_id":"LK_621","rank":39,"user_total_name":"名姝"},{"user_name":"雅韵","user_total":27800000,"user_id":"LK_1037","rank":40,"user_total_name":"雅韵"},{"user_name":"贝极塔2","user_total":27800000,"user_id":"LK_613","rank":41,"user_total_name":"贝极塔2"},{"user_name":"gdsfg852","user_total":27600000,"user_id":"LK_623","rank":42,"user_total_name":"gdsfg852"},{"user_name":"芳华","user_total":26800000,"user_id":"LK_612","rank":43,"user_total_name":"芳华"},{"user_name":"雅唱","user_total":26600000,"user_id":"LK_1038","rank":44,"user_total_name":"雅唱"},{"user_name":"峻熙","user_total":26400000,"user_id":"LK_618","rank":45,"user_total_name":"峻熙"},{"user_name":"平婉","user_total":26200000,"user_id":"LK_622","rank":46,"user_total_name":"平婉"},{"user_name":"智鑫","user_total":26000000,"user_id":"LK_1193","rank":47,"user_total_name":"智鑫"},{"user_name":"子萱","user_total":25200000,"user_id":"LK_625","rank":48,"user_total_name":"子萱"},{"user_name":"洁玉","user_total":24600000,"user_id":"LK_1030","rank":49,"user_total_name":"洁玉"},{"user_name":"天使阿蛮","user_total":24400000,"user_id":"LK_1192","rank":50,"user_total_name":"天使阿蛮"}]}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"result":{"type":1}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] ==>PACK_AGE	{"type":1}
+
+[LUA-print] ==>PACK_AGE	{"command":"enterBank","type":"lua","session":9,"data":""}
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"type":"lua","session":9,"result":{"cmd":"enterBnak","data":0}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] 存钱	0
+
+[LUA-print] 取钱	50000000
+
+[LUA-print] 在大厅层接收消息
+
+[LUA-print] <==sock	{"ok":true,"result":{"type":1}}
+
+[LUA-print] 在大厅层
+
+[LUA-print] ==>PACK_AGE	{"type":1}
+
+[LUA-print] ==>PACK_AGE	{"command":"logout","type":"lua","session":10,"data":""}
+
+[LUA-print] 网络断了？你为什么？？SOCKET_TCP_CLOSED
+
+[LUA-print] 网络断了？你为什么？？SOCKET_TCP_CLOSED
+
