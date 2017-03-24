@@ -3,6 +3,7 @@ local Liveudpate = class("Liveudpate", function()
     return display.newScene("Liveudpate")
 end)
 
+local oraryPath = nil
 
 function Liveudpate:ctor()
 
@@ -38,7 +39,8 @@ function Liveudpate:ctor()
             UILabelType = 2, text = "", size = 30,color = cc.c3b(0,0,0)})
         :align(display.CENTER, Hotbg:getContentSize().width/2, Hotbg:getContentSize().height/5 *2)
         :addTo(Hotbg)
-    self.Butbool = false
+
+    --[[
     local images = {
            normal = "gamescene/buyreturn.png",
            pressed = "gamescene/buyreturn.png",
@@ -57,12 +59,32 @@ function Liveudpate:ctor()
        :align(display.CENTER,Hotbg:getContentSize().width/3 *2,Hotbg:getContentSize().height/5)
        :addTo(Hotbg)
 
-    self:addhotupdate()  
-      
+    ]]--
+    self.fun = function ()
+    end
+    self.Butbool = true
+    self.playgame = nil
+    local images = {
+       normal = "gamescene/buyconfirm.png",
+       pressed = "gamescene/buyconfirm.png",
+       disabled = "gamescene/buyconfirm.png"
+       }
+    self.playgame = cc.ui.UIPushButton.new(images,{scale9 = true})
+       :setButtonSize(160,80)
+       :onButtonClicked(function (event)
+            if self.Butbool then
+                return
+            end
+            self.fun()                    
+       end)
+       :align(display.CENTER,Hotbg:getContentSize().width/3,Hotbg:getContentSize().height/5)
+       :addTo(Hotbg)
+    self.playgame:setOpacity(0)
+
+    self.temporaryPathText = ""
+    self:addhotupdate()       
     self.Hotbg = Hotbg
 
-    -- self.Length_size = nil
-    
 end
 
 function Liveudpate:onRequestCallback(event)
@@ -87,7 +109,71 @@ function Liveudpate:onRequestCallback(event)
         --请求失败
         return
     end
+end
 
+function Liveudpate:readFile(path,mode)
+    mode = mode or "a+b"
+    local file = io.open(path, mode)
+    local content = ""
+    if file then
+        for line in file:lines() do
+            content = content..line.."\n" 
+        end
+        if content == nil then 
+            return false 
+        end
+        io.close(file)
+        print("content =======",content)
+        return content
+    else
+        return false
+    end
+end
+
+function Liveudpate:writeFile(path,content,mode)
+    mode = mode or "w+b"
+    local file = io.open(path, mode)
+    if file then
+        if file:write(content) == nil then 
+            return false 
+        end
+        io.close(file)
+        return true
+    else
+        return false
+    end
+end
+
+function Liveudpate:gettablePath(temp)
+    local Path = cc.FileUtils:getInstance():getWritablePath()
+    if not oraryPath then
+        oraryPath = Path.."hotupdate/project.manifest"
+        local file = io.open(oraryPath,"r+")
+        if not file then
+            oraryPath = Path.."hotupdate/res/project.manifest"
+            file = io.open(oraryPath,"r+")
+            if not file then
+                oraryPath = Path.."res/project.manifest"
+            else
+                io.close(file)
+            end
+        else
+            io.close(file)
+        end
+    end
+    print("操作========>>",temp,oraryPath)
+    if temp == "read" then
+        self.temporaryPathText = self:readFile(oraryPath)
+        if self.temporaryPathText then
+            return true
+        else
+            return false
+        end
+    elseif temp == "write" then
+        return self:writeFile(oraryPath,self.temporaryPathText)
+    else
+        return false
+    end
 end
 
 function Liveudpate:addhotupdate()
@@ -138,6 +224,9 @@ function Liveudpate:onUpdateEvent(event)
         --进登录界面 
     elseif eventCode == cc.EventAssetsManagerEx.EventCode.UPDATE_PROGRESSION then
         -- self.text:setString("正在更新文件 : "..event:getAssetId())
+        if not self.Butbool then
+            self.progression:setString("更新进度条的进度："..string.format("%0.2d", event:getPercent()).."%")
+        end
         -- self.progression:setString("更新进度条的进度："..event:getPercent())
         --print("更新进度 : ",event:getPercent())
         if event:getAssetId() == cc.AssetsManagerExStatic.VERSION_ID then 
@@ -146,11 +235,10 @@ function Liveudpate:onUpdateEvent(event)
             --print("文件Manifest : ",event:getPercent())
         else 
             --print("进度条的进度 : ",event:getPercent())
-            self.progression:setString("更新进度条的进度："..string.format("%0.2d", event:getPercent()).."%")
+            --self.progression:setString("更新进度条的进度："..string.format("%0.2d", event:getPercent()).."%")
             --跳进度
             self._perent = event:getPercentByFile()
-            self.progression:setString("更新进度条的进度："..string.format("%0.2d", self._perent).."%")
-            
+            -- self.progression:setString("更新进度条的进度："..string.format("%0.2d", self._perent).."%")    
         end
     elseif eventCode == cc.EventAssetsManagerEx.EventCode.ERROR_DOWNLOAD_MANIFEST or 
             eventCode == cc.EventAssetsManagerEx.EventCode.ERROR_PARSE_MANIFEST then
@@ -160,47 +248,35 @@ function Liveudpate:onUpdateEvent(event)
     elseif eventCode == cc.EventAssetsManagerEx.EventCode.ALREADY_UP_TO_DATE then 
         self.locad:setString("已经是最新版本,正在进入游戏...")
         self._perent = 100
-        self.Butbool = true
-        self.playgame:setOpacity(0)
-        -- local images = {
-        --    normal = "gamescene/buyconfirm.png",
-        --    pressed = "gamescene/buyconfirm.png",
-        --    disabled = "gamescene/buyconfirm.png"
-        --    }
-        -- local playgame = cc.ui.UIPushButton.new(images,{scale9 = true})
-        --    :setButtonSize(160,80)
-        --    :onButtonClicked(function (event)
+        -- self.Butbool = true
+        -- self.playgame:setOpacity(0)
         self:performWithDelay(function ()
             cc.LuaLoadChunksFromZIP("res/game.zip")
             require("app.netScoket.Socketgame")
             mainscene = require("app.scenes.MainScene")
             local Game = mainscene.new()
             display.replaceScene(Game)
-        end, 1)
-           -- end)
-           -- :align(display.CENTER,self.Hotbg:getContentSize().width/3,self.Hotbg:getContentSize().height/5)
-           -- :addTo(self.Hotbg) 
+        end, 2)
     elseif eventCode == cc.EventAssetsManagerEx.EventCode.UPDATE_FINISHED then
-        self.text:setString("更新到最新版本,可以进入游戏")
+        self.text:setString("更新到最新版本,正在进入游戏...")
         self._perent = 100
         -- package.loaded["app.scenes.MainScene"] = nil
         -- package.preload["app.scenes.MainScene"] = nil
         -- app:run()
-        cc.FileUtils:getInstance():purgeCachedEntries()
-        cc.LuaLoadChunksFromZIP("res/game.zip")
-        require("app.netScoket.Socketgame")
-        mainscene = require("app.scenes.MainScene")
-        local Game = mainscene.new()
-        display.replaceScene(Game)
+        self:performWithDelay(function ()
+            cc.FileUtils:getInstance():purgeCachedEntries()
+            cc.LuaLoadChunksFromZIP("res/game.zip")
+            require("app.netScoket.Socketgame")
+            mainscene = require("app.scenes.MainScene")
+            local Game = mainscene.new()
+            display.replaceScene(Game)
+        end,3)
 
     elseif eventCode == cc.EventAssetsManagerEx.EventCode.ERROR_UPDATING then
-        self.text:setString("更新过程中遇到错误")
-    elseif eventCode == cc.EventAssetsManagerEx.EventCode.NEW_VERSION_FOUND  then
-        self.locad:setString("发现新版本，是否升级到" .. self.am:getRemoteManifest():getVersion().."版本")
-        self.size:setString("需要下载的文件大小为：".."120K")
-        -- local request = network.createHTTPRequest(handler(self, self.onRequestCallback),"http://192.168.80.20:3000/hotupdate/res_size.html","GET")
-        -- request:start()
-        local images = {
+        self.text:setString("更新过程中遇到错误,请重新开启游戏")
+        self:gettablePath("write")
+        local images 
+        images = {
            normal = "gamescene/buyconfirm.png",
            pressed = "gamescene/buyconfirm.png",
            disabled = "gamescene/buyconfirm.png"
@@ -208,12 +284,29 @@ function Liveudpate:onUpdateEvent(event)
         local playgame = cc.ui.UIPushButton.new(images,{scale9 = true})
            :setButtonSize(160,80)
            :onButtonClicked(function (event)
-                self.am:update()
+                self:performWithDelay(function ()
+                    cc.Director:getInstance():endToLua()
+                end , 0.2) 
            end)
            :align(display.CENTER,self.Hotbg:getContentSize().width/3,self.Hotbg:getContentSize().height/5)
-           :addTo(self.Hotbg) 
+           :addTo(self.Hotbg)
+        -- self.am:downloadFailedAssets()
+    elseif eventCode == cc.EventAssetsManagerEx.EventCode.NEW_VERSION_FOUND  then
+        self.locad:setString("发现新版本，是否升级到" .. self.am:getRemoteManifest():getVersion().."版本")
+        self.size:setString("需要下载的文件大小为：".."120K")
+        -- local request = network.createHTTPRequest(handler(self, self.onRequestCallback),"http://192.168.80.20:3000/hotupdate/res_size.html","GET")
+        -- request:start()
+        if self.Butbool then
+            self.playgame:setOpacity(255)
+            self.Butbool = false
+            self.fun = function ()
+                self:gettablePath("read")
+                self.am:update()
+                self.playgame:setOpacity(0)
+            end
+        end
     elseif eventCode == cc.EventAssetsManagerEx.EventCode.UPDATE_FAILED  then
-        self.text:setString("更新失败")
+        self.text:setString("更新失败,第"..self.failedcount.."尝试更新")
         if self.failedcount > 10 then 
             self._perent = 100
         else 
@@ -222,7 +315,6 @@ function Liveudpate:onUpdateEvent(event)
         end
     end 
 end
-
 
 function Liveudpate:onEnter()
 end
